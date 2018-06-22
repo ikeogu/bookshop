@@ -1,0 +1,2 @@
+This site as created to add digital products buy the admin  an d updates can  be made also.
+the user cn  buy an d make on lin e payment once this is done the products can  be downloaded. written  in  php and mysql lang.

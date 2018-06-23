@@ -114,97 +114,102 @@ if (isset($_GET['product_id']) && isset($_GET['opt'])){
     
 
 
+<body>
 
-
-<div id="mainBody" class="container">
+  <div id="mainBody" class="container">
     <font color="black">
 
-    <form method="post" action="product_summary.php">
-      <h3>  SHOPPING CART [ <small><?php
-        $count = count(Orderdetails::where(array('customer_id' => $session->user_id )));
-        //var_dump($count); exit();
-        echo $count;?> </small>]
+      <form method="post" action="product_summary.php">
+        <h3>  SHOPPING CART [ <small><?php
+          $count = count(Orderdetails::where(array('customer_id' => $session->user_id )));
+          //var_dump($count); exit();
+          echo $count;
+          if ($count>1) {
+            # code...
+            echo "<div class='alert alert-danger alert-dismissible' role='alert'>
+                        <button type='button' class='close' data-dismiss='alert'> <span aria-hidden='true'> &times; </span><span class='sr-only'>Close </span> </button>
+                        <strong> Oop! you are not allowed to purchase more than a book at a time</strong></div>";
+          }
 
-     </h3>  
-      <hr class="soft"/>
-      
-      <table class="table table-bordered">
-        <thead>
-          <tr>
-            <th>Product</th>
-            <th>Description</th>
-            <th  width="100">Quantity</th>
-            <th  width="80">Price</th>
-            <th width="80">Total</th>
-            <th width="100">Action</th>
-          </tr>
-        </thead>
-        <tbody>
-          <?php 
-            $row= '';
-             $total = 0;
-             if($ordered_items){
-            foreach ($ordered_items as $key => $item) {
-              # code...
-              $item->Total/=100;
-             $total += $item->Total;
-             //$total/=100;
-            
-            $product = Product::find($item->product_id);
-            $product->price/= 100;
-            $strings =  $product->descr;
-            $string = strip_tags($strings);
-
-           if (strlen($string) > 20) {
-              $stringCut = substr($string, 0, 10);
-              $string = substr($stringCut, 0, strrpos($stringCut, ''))."... <a href='user_product_details.php?id=$item->product_id'><span style='color:blue'>Read More</span></a>";
-            } 
-            $row.= " <tr>
-                          <td><img width='60' src='images/product/$product->logo'> </td>
-                          <td>$product->title  <br/>   $string</td>
-                          <td>$item->quantity</td>
-                          <td>$product->price </td>
-                          <td>$item->Total</td>
-                          <td><a href='product_summary.php?id={$item->product_id}&opt=0'>
-                            <button class='btn btn-info' onclick='return confirm('Are you sure you want to delete?')' type= 'button'>
-                            <i class='icon-remove icon-white'></i> Remove</button></a></td>
-
-                      </tr>    
-            "; 
-            }
-            echo $row."<td colspan='5' align='right'><h4> TOTAL = $total</h4></td>";  
-            }
-                          
-          ?> 
-        </tbody>
-      </table> 
-      <div class="row"> 
-        <div class="container">
-          <div class="col col-lg-2">        
-           
-          <div class='row'>
-                    <div class='col-lg-4 col-md-6'>
-                      <a href='user_products.php'  type= 'button' class='btn btn-large btn-fill btn-success'> Continue Shopping<i class='icon-arrow-left'></i> </a>
-                    </div>
-                  </div> 
-                
-                
-            </div>
-            <div class="col col-md-8">
-              <section class="thumbnail">
-                <h4>Please make a choice!</h4>
-              </section>
+          ?> </small>]
+        </h3>  
+        <hr class="soft"/>
+        
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>Product</th>
+              <th>Description</th>
+              <th  width="100">Quantity</th>
+              <th  width="80">Price</th>
+              <th width="80">Total</th>
+              <th width="100">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <?php 
+              $row= '';
+               $total = 0;
+               if($ordered_items){
+              foreach ($ordered_items as $key => $item) {
+                # code...
+                $item->Total/=100;
+               $total += $item->Total;
+               //$total/=100;
               
-            </div>
-              <div class="col col-lg-2">
-              <a href="makepayment.php" type="button" class="btn btn-info btn-fill"> checkout</a>
-            </div>
-          </div>  
+              $product = Product::find($item->product_id);
+              $product->price/= 100;
+              $strings =  $product->descr;
+              $string = strip_tags($strings);
+
+             if (strlen($string) > 20) {
+                $stringCut = substr($string, 0, 10);
+                $string = substr($stringCut, 0, strrpos($stringCut, ''))."... <a href='user_product_details.php?id=$item->product_id'><span style='color:blue'>Read More</span></a>";
+              } 
+              $row.= " <tr>
+                            <td><img width='60' src='images/product/$product->logo'> </td>
+                            <td>$product->title  <br/>   $string</td>
+                            <td>$item->quantity</td>
+                            <td>$product->price </td>
+                            <td>$item->Total</td>
+                            <td><a href='product_summary.php?id={$item->product_id}&opt=0'>
+                              <button class='btn btn-info' type= 'button'>
+                              <i class='icon-remove icon-white'></i> Remove</button></a></td>
+
+                        </tr>    
+              "; 
+              }
+              echo $row."<td colspan='5' align='right'><h4> TOTAL = $total</h4></td>";  
+              }
+                            
+            ?> 
+          </tbody>
+        </table> 
+        <div class="row"> 
+          <div class="container">   
+            
+              <div class='col-lg-4 col-md-4  col-sm-4'>
+                        <a href='user_products.php'  type= 'button' class='btn btn-large btn-fill btn-success'> Continue Shopping<i class='icon-arrow-left'></i> </a>
+              </div>
+     
+                  
+              <div class="col col-md-4  col-sm-4">
+                <section class="thumbnail">
+                  <h4> make a choice!</h4>
+                </section>
+              </div>
+              <div class="col col-lg-2 col-md-4 col-sm-4">
+                <a href="makepayment.php" type="button" class="btn btn-info btn-fill"> checkout</a>
+              </div>
+            </div>  
         </div>
-       
-</font>
-</div>
-<hr class="soft">
-<div class="thumbnail" id="footerSection">
-	<?php include('footer.php');?>
-</div>
+      </form>
+    </font>
+  </div>
+    <hr class="soft">
+   <footer>
+            <?php include_once'footer.php';?>
+   </footer>
+        
+
+</body>  

@@ -16,29 +16,33 @@ include_once 'includes/function.php';
      $product = Product::All();
   
 ?>
-
+<body>
 <section class="row" id="search-result">
-
-	<table class=" table table-hover table-striped table-border ">
-		<?php
-		
-			$table ='';
-			if ($product)
-				foreach ($product as $product) {
-					# code...
-					$table.= "<tr>
-									<td>{$product->getProductId()}</td>
-									<td>{$product->name}</td>
-									<td><a class= 'btn btn-info' href='editproduct.php?product_id={$product->getProductId()}'>Edit</a></td>
- 										<td><a class= 'btn btn-info' href='product.php?product_id={$product->getProductId()}&opt=0'>Delete</a></td>
-							</tr>";
-				}
-				echo $table;
+	<div class="col col-sm-8 col-md-8">
+		<table class=" table table-hover table-striped table-border ">
+			<?php
 			
+				$table ='';
+				if ($product)
+					foreach ($product as $product) {
+						# code...
+						$table.= "<tr>
+										<td>{$product->getProductId()}</td>
+										<td>{$product->name}</td>
+										<td><a class= 'btn btn-info' href='editproduct.php?product_id={$product->getProductId()}'>Edit</a></td>
+	 										<td><a class= 'btn btn-info' href='product.php?product_id={$product->getProductId()}&opt=0'>Delete</a></td>
+								</tr>";
+					}
+					echo $table;
+				
 
-		?>
-	</table>
+			?>
+		</table>
+	</div>		
 </section>
-<?php
+</body>
+<section>
+	<?php
 include("footer.php");
 ?>
+</section>

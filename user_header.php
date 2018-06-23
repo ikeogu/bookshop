@@ -4,6 +4,30 @@ include_once('includes/orderdetails.php');
 if(!($session->is_logged_in())) redirect('login.php');
 ?>
 
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+    $('.search-box input[type="text"]').on("keyup input", function(){
+        /* Get input value on change */
+        var inputVal = $(this).val();
+        var resultDropdown = $(this).siblings(".result");
+        if(inputVal.length){
+            $.get("backend-search.php", {term: inputVal}).done(function(data){
+                // Display the returned data in browser
+                resultDropdown.html(data);
+            });
+        } else{
+            resultDropdown.empty();
+        }
+    });
+    
+    // Set search input value on click of result item
+    $(document).on("click", ".result p", function(){
+        $(this).parents(".search-box").find('input[type="text"]').val($(this).text());
+        $(this).parent(".result").empty();
+    });
+});
+</script>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -29,18 +53,7 @@ if(!($session->is_logged_in())) redirect('login.php');
 						<div class="col-sm-4">
 							<div class="logo"><i class="fa fa-diamond"></i>Heldy - products</div>
 						</div>
-						<div>
-								<?php 
-
-									$count = count(Orderdetails::where(array('customer_id' => $session->user_id )));
-		
-								echo "<div class='pull-right'> <br/>
-								  <a title='Click to view your cart!' href='product_summary.php'> <span class='btn btn-mini btn-success'> <i class='icon-shopping-cart icon-white'></i> <small>your cart has $count items</small> </span> </a>
-								  <a title='Click to view your cart!' href='product_summary.php'>
-								    <span class='btn btn-mini active btn'>check cart</span></a>
-								</div>";
-								?>
-						</div>
+						
 					</div>
 				</div>
 			</div>
@@ -73,12 +86,7 @@ if(!($session->is_logged_in())) redirect('login.php');
 										<li class=""><a href="logout.php"><i class="icon-flag"></i> Logout</a></li>
 									<li><a href="contact.php">Contact Us</a></li>
 									</ul>
-									<form class="navbar-form navbar-right" role="search">
-										<div class="form-group">
-											<input type="text" class="form-control" placeholder="Search...">
-											<span class="nav-search"><a href="#"><i class="fa fa-search"></i></a></span>
-										</div>	
-									</form>
+									
 								</div>
 							</div>
 						</nav>
@@ -87,30 +95,20 @@ if(!($session->is_logged_in())) redirect('login.php');
 			</div>	
 
 		</header>
-		
+		<section>
+			<form class="navbar-form navbar-right" role="search">
+				<div class="search-box form-group">
+					 <input type="text" autocomplete="off" placeholder="Search book..." class="form-control" />
+					
+						 <div class="result"></div>
+				</div>
+
+			</form>
+		</section>
 
 		
  <!-- ALL JAVASCRIPT -->  
- 
-    <script type='text/javascript'  language="Javascript">
-
-  var qty=document.getElementById('qty').value;
-     var qleft=document.getElementById('qleft').value;
-  
-    function OnChange(value){
-
-    
-    if (+qty > +qleft) {
-         alert("Order Quantity Exceeds.");
-         document.getElementById('qty').value='';
-    
-  }
-  
-
-  
-    }
-
-</script>       
+       
     <script src='js/jquery.js'></script>
     <script src='bootstrap/js/bootstrap.min.js'></script>
     <script src='js/custom.js'></script>

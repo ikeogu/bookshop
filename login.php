@@ -54,9 +54,6 @@
     <link href="assets/css/light-bootstrap-dashboard.css?v=1.4.0" rel="stylesheet"/>
 
 
-    <!--  CSS for Demo Purpose, don't include it in your project     -->
-    <link href="assets/css/demo.css" rel="stylesheet" />
-
 
     <!--     Fonts and icons     -->
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
@@ -71,40 +68,14 @@
             <!-- header top -->
             <div class="header-top">
                 <div class="container">
-                    <!--<div class="row">
-                        <div class="col-sm-3">
-                            <ul class="list-inline">
-                                <li>
-                                    <div class="dropdown">
-                                        <a class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img  src="images/is.png" alt="" /> English <i class="fa fa-angle-down"></i></a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="col-sm-4">
-                            <ul class="list-inline">
-                                <li><a href="#" ><i class="fa fa-mobile"></i> +88018374345</a></li>
-                                <li><a href="#" ><i class="fa fa-envelope-o"></i> example@gmail.com</a></li>
-                            </ul>   
-                        </div>
-                        <div class="col-sm-5">
-                            <ul class="list-inline pull-right">
-                                <li><a href="#" ><i class="fa fa-user"></i> My Account</a></li>
-                               
-                                <li><a class="register" href="signup.php" >Register</a></li>
-                            </ul>   
-                        </div>  
-                    </div>  
-                </div>
-            </div>-->
-            
-            <!-- logo and adds -->
+                    
             <div class="logo-add">
                 <div class="container">
                     <div class="row">
-                        <div class="col-sm-4">
+                        <div class="col-sm-4  col-md-4">
                             <div class="logo"><i class="fa fa-diamond"></i>Heldy- BuyProduct</div>
                         </div>
-                        <div class="col-sm-8">
+                        <div class="col-sm-8  col-md-8">
                             <h3 class="add bb-year-end-ribbon hidden-xs"><img src="img/re.jpg" width="40px;" alt="" /> 
                             <span>Please  <span>Login</span> </span> 
                          </div>
@@ -115,7 +86,7 @@
             <!-- header bottom -->
             <div class="header-bottom">
                 <div class="row">
-                    <div class="col-sm-12">
+                    <div class="col-sm-12  col-md-2">
                         <nav class="navbar navbar-default">
                             <div class="container">
                                 <!-- Brand and toggle get grouped for better mobile display -->
@@ -131,10 +102,10 @@
                         </nav>
                     </div>         
             </div>  
-                <div class="logo-add">
+            <div class="logo-add">
                 <div class="container">
                     <div class="row">
-                        <div class="col-sm-4">
+                        <div class="col-sm-4  col-md-4">
                             <div class="logo"><i class="fa fa-diamond"></i> LOGin</div>
                         </div>
                         
@@ -146,11 +117,11 @@
   <div class="content">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-md-8">
+                    <div class="col-md-8  col-sm-8">
                         <div class="card">
                             <div class="header">
                                 <div class="row">
-                                        <div class="col-lg-4 col-md-4 ">
+                                        <div class="col-lg-4 col-md-4 col-sm-4">
                                            <?php echo $result?> 
                                         </div>
                                 </div>
@@ -159,21 +130,25 @@
                                 <form action="login.php" method="POST" id="loginForm" name="loginForm">
                                     
                                     <div class="row">
-                                       <div class="col-md-6">
+                                       <div class="col-md-6 col-sm-6">
                                             <div class="form-group">
                                                 <label>Email</label>
                                                 <input type="email" class="form-control"   name="email"  required="" placeholder="your Email@example.com">
                                             </div> 
-                                        </div>    
-                                       <div class="col-md-6">
+                                        </div> 
+                                    </div>
+                                    <div class="row">       
+                                       <div class="col-md-6 col-sm-6">
                                             <div class="form-group">
                                                 <label>Password</label>
-                                                <input type="password" class="form-control" placeholder="Password"  name="password">
+                                                <input type="password" class="form-control" placeholder="Password"  name="password" required="">
                                             </div>
                                         </div>
-                                        <div class="col col-lg-8">
-                                            <button  type="submit" class="btn btn-info btn-fill pull-right"  name="login" style="color: green">Login </button>
-                                            <a href="signup.php" class="btn btn-info btn-fill pull-left" style="color: green" >Signup</a>
+                                    </div> 
+                                    <div class="row">   
+                                        <div class="col col-lg-8 col-sm-6 col-md-6">
+                                            <button  type="submit" class="btn btn-success btn-fill"  name="login" style="color: white">Login </button>
+                                            <a href="signup.php" class="btn btn-success btn-fill " style="color: white" >Signup</a>
                                          </div>
                                     </div>
                                 

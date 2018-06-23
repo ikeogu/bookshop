@@ -1,7 +1,10 @@
-<?php
+<section>
+	<?php
 require("header.php");
 ?>
-<!-- home -->
+
+</section>
+
 		<section class="home">
 			<div class="intro">
 				<div id="home" class="carousel slide" data-ride="carousel">
@@ -15,7 +18,7 @@ require("header.php");
 						<div class="item active">
 							<div class="container">
 								<div class="row">
-									<div class="col-sm-7">
+									<div class="col-sm-7 col-md-7">
 										<div class="intro-content">
 											<h3>Don't MISS Out</h3>
 											<h4>wonderful <span class="highlight">RESERACH MATERIAL</span></h4>
@@ -23,7 +26,7 @@ require("header.php");
 										
 										</div>
 									</div>
-									<div class="col-sm-5">
+									<div class="col-sm-5  col-md-5">
 										<img class="img-responsive" src="images/ha.jpg" height="400" alt="" />
 									</div>	
 								</div>	
@@ -32,7 +35,7 @@ require("header.php");
 						<div class="item">
 							<div class="container">
 								<div class="row">
-									<div class="col-sm-7">
+									<div class="col-sm-7  col-md-7">
 										<div class="intro-content">
 											<h3>Lucky Chance</h3>
 											<h4>To solve that <span class="highlight">Reseach Problems</span></h4>
@@ -40,7 +43,7 @@ require("header.php");
 											
 										</div>
 									</div>
-									<div class="col-sm-5">
+									<div class="col-sm-5  col-md-5">
 										<img class="img-responsive" src="images/kn.jpg" alt="" height="400" />
 									</div>	
 								</div>	
@@ -49,7 +52,7 @@ require("header.php");
 						<div class="item">
 							<div class="container">
 								<div class="row">
-									<div class="col-sm-7">
+									<div class="col-sm-7  col-md-7">
 										<div class="intro-content">
 											<h3>Less  Study</h3>
 											<h4>Quality  <span class="highlight">Materials</span></h4>
@@ -57,7 +60,7 @@ require("header.php");
 									
 										</div>
 									</div>
-									<div class="col-sm-5">
+									<div class="col-sm-5  col-md-5">
 										<img class="img-responsive" src="images/st.jpg" alt="" height="400" />
 									</div>	
 								</div>	
@@ -66,7 +69,7 @@ require("header.php");
 						<div class="item">
 							<div class="container">
 								<div class="row">
-									<div class="col-sm-7">
+									<div class="col-sm-7  col-md-7">
 										<div class="intro-content">
 											<h3>Last Chance</h3>
 											<h4>Biggest <span class="highlight">Sale</span></h4>
@@ -74,7 +77,7 @@ require("header.php");
 			
 										</div>
 									</div>
-									<div class="col-sm-5">
+									<div class="col-sm-5  col-md-5">
 										<img class="img-responsive" src="images/book.jpg" alt="" height="400" />
 									</div>	
 								</div>	
@@ -115,21 +118,21 @@ require("header.php");
 		<section class="emarket-adds">
 			<div class="container">
 				<div class="row">
-					<div class="col-sm-4">
+					<div class="col-sm-4  col-md-4">
 						<div class="single-add">
 							<h4>Get <span>50%</span> Discount</h4>
 							<a href="#" class="btn btn-default" role="button">Learn More</a>
 							<span class="img-add"><img src="images/te.jpg" alt="" /></span>
 						</div>
 					</div>
-					<div class="col-sm-4">
+					<div class="col-sm-4  col-md-4">
 						<div class="single-add">
 							<h4>Best <span>Offer</span> for You</h4>
 							<a href="#" class="btn btn-default" role="button">Learn More</a>
 							<span class="img-add"><img src="images/red-tablet.png" alt="" /></span>
 						</div>
 					</div>
-					<div class="col-sm-4">
+					<div class="col-sm-4  col-md-4">
 						<div class="single-add">
 							<h4><span>Only</span> Best smartphone</h4>
 							<a href="#" class="btn btn-default" role="button">Learn More</a>
@@ -147,7 +150,7 @@ require("header.php");
 			<div class="price-intro">
 				<div class="container">
 					<div class="row">
-						<div class="col-sm-12">
+						<div class="col-sm-12  col-md-12">
 							<div class="pull-left">
 								<blockquote>
 								<h1> Learning Never Ends</h1>
@@ -164,7 +167,7 @@ require("header.php");
 		</section>	
 			
 		<!-- product info -->
-		
+<div>		
 <?php
 require("footer.php");
 ?>

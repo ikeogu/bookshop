@@ -67,27 +67,6 @@
 
 <script type="text/javascript" src="js/JQUERY.js"></script>
 <script type="text/javascript" src="js/jquery.validate.js"></script>
-<script type="text/javascript">
-     function validatePassword() {
-        var validator = $("#loginForm").validate({
-            rules: {
-                password: "required",
-                confirmpassword: {
-                    equalTo: "#password"
-                }
-            },
-            messages: {
-                password: " Enter Password",
-                confirmpassword: " Enter Confirm Password Same as Password"
-            }
-        });
-        if (validator.form()) {
-            alert('Sucess');
-        }
-    }
- 
-</script>
-
 </head>
 
 <body>

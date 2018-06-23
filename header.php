@@ -1,4 +1,27 @@
-
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+    $('.search-box input[type="text"]').on("keyup input", function(){
+        /* Get input value on change */
+        var inputVal = $(this).val();
+        var resultDropdown = $(this).siblings(".result");
+        if(inputVal.length){
+            $.get("backend-search.php", {term: inputVal}).done(function(data){
+                // Display the returned data in browser
+                resultDropdown.html(data);
+            });
+        } else{
+            resultDropdown.empty();
+        }
+    });
+    
+    // Set search input value on click of result item
+    $(document).on("click", ".result p", function(){
+        $(this).parents(".search-box").find('input[type="text"]').val($(this).text());
+        $(this).parent(".result").empty();
+    });
+});
+</script>
 
 
 <!DOCTYPE html>
@@ -6,6 +29,12 @@
     <head>
 		<title>products</title>
         <!-- ALL STYLESHEET -->
+        <meta charset="utf-8" />
+		<link rel="icon" type="image/png" href="assets/img/favicon.ico">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    	<meta name="viewport" content="width=device-width" />
+
         <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
 		<link href="css/font-awesome.min.css" rel="stylesheet">
 		<link href="css/style.css" rel="stylesheet">
@@ -20,23 +49,22 @@
 			<!-- header top -->
 			<div class="header-top">
 				<div class="container">
-					<!--<div class="row">
+					<div class="row">
 						
-						</div>
-						<div class="col-sm-4">
+						<div class="col-sm-8 col-md-4 ">
 							<ul class="list-inline">
 								<li><a href="#" ><i class="fa fa-mobile"></i> +88018374345</a></li>
 								<li><a href="#" ><i class="fa fa-envelope-o"></i> example@gmail.com</a></li>
 							</ul>	
 						</div>
-						<div class="col-sm-5">
+						<div class="col-sm-5 col-md-4">
 							<ul class="list-inline pull-right">
-								<li><a href="#" ><i class="fa fa-user"></i> My Account</a></li>
+								<li><a href="login.php" ><i class="fa fa-book"></i> Buy a Book</a></li>
 								
 								<li><a class="register" href="signup.php" >Register</a></li>
 							</ul>	
 						</div>	
-					</div>-->	
+					</div>	
 				</div>
 			</div>
 			
@@ -44,11 +72,11 @@
 			<div class="logo-add">
 				<div class="container">
 					<div class="row">
-						<div class="col-sm-4">
-							<div class="logo"><i class="fa fa-diamond"></i>Heldy - products</div>
+						<div class="col-sm-6 col-md-6">
+							<div class="logo"><i class="fa fa-diamond"></i>Heldy-products</div>
 						</div>
-						<div class="col-sm-8">
-							<h3 class="add bb-year-end-ribbon hidden-xs"><img src="images/re.png" width="40px;" alt="" /> 
+						<div class="col-sm-6 col-md-6">
+							<h3 class="add bb-year-end-ribbon hidden-xs"><img src="images/re.jpg" width="40px;" alt="" /> 
 							<span> We Can <span>Help</span> Your Research Work</span> <button class="btn btn-default"></button></h3>
 						</div>
 					</div>
@@ -59,7 +87,7 @@
 			<!-- header bottom -->
 			<div class="header-bottom">
 				<div class="row">
-					<div class="col-sm-12">
+					<div class="col-sm-12 col-md-12">
 						<nav class="navbar navbar-default">
 							<div class="container">
 								<!-- Brand and toggle get grouped for better mobile display -->
@@ -78,26 +106,15 @@
 										<li><a href="index.php" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Home</a></span>
 											
 										</li>
-										<li  class="active"><a href="product-detail.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Shop</a><span class="label label-danger text-center hidden-xs">New <i class="fa fa-caret-right"></i></span>
-											<ul class="dropdown-menu">
-												<li><a href="product.php">Products</a></li>
-												
-											</ul>	
-										</li>
 										
 										<li><a href="aboutus.php">About Us</a> <span class="label label-info text-center hidden-xs">New <i class="fa fa-caret-right"></i></span></li>
-										<li><a href="contact.php">Contact Us</a></li>
+										<li><a href="products.php">Books</a></l>
 									</ul>
 									<ul class="nav navbar-nav">
-										<li><a href="login.php"> Login </a></li>
-										<li><a href="signup.php">Sign up </a></li>
+										<li><a href=""> </a></li>
+										<li><a href=""></a></li>
 									</ul>
-									<form class="navbar-form navbar-right" role="search">
-										<div class="form-group">
-											<input type="text" class="form-control" placeholder="Search...">
-											<span class="nav-search"><a href="#"><i class="fa fa-search"></i></a></span>
-										</div>	
-									</form>
+									
 								</div>
 							</div>
 						</nav>
@@ -105,8 +122,18 @@
 					</div>	
 				</div>	
 			</div>	
+
 		</header>
-		
+		<div>
+			<form class="navbar-form navbar-right" role="search">
+										<div class="form-group search-box ">
+											
+												<input type="text" class="form-control" autocomplete="off" placeholder="Search for Book...">
+											<span class="nav-search"><a href="#"><i class="fa fa-search"></i></a></span>
+											 <div class="result"></div>
+										</div>	
+									</form>
+		</div>
  <!-- ALL JAVASCRIPT -->         
     <script src='js/jquery.js'></script>
     <script src='bootstrap/js/bootstrap.min.js'></script>

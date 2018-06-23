@@ -37,9 +37,9 @@
 			if($lastcustomer  = static::last()){
 	            $lastId = explode ('/',$lastcustomer->customer_id );
 	            $lastId[1]++;
-	            $this->customer_id  = 'CUSTR/00'.$lastId[1];
+	            $this->customer_id  = 'CUSTR/'.$lastId[1];
 	        }else{
-	            $this->customer_id  = 'CUSTR/001'; 
+	            $this->customer_id  = 'CUSTR/01'; 
 	        }
    		 }
 

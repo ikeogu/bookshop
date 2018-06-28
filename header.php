@@ -124,16 +124,7 @@ $(document).ready(function(){
 			</div>	
 
 		</header>
-		<div>
-			<form class="navbar-form navbar-right" role="search">
-										<div class="form-group search-box ">
-											
-												<input type="text" class="form-control" autocomplete="off" placeholder="Search for Book...">
-											<span class="nav-search"><a href="#"><i class="fa fa-search"></i></a></span>
-											 <div class="result"></div>
-										</div>	
-									</form>
-		</div>
+		
  <!-- ALL JAVASCRIPT -->         
     <script src='js/jquery.js'></script>
     <script src='bootstrap/js/bootstrap.min.js'></script>

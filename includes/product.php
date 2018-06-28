@@ -54,13 +54,7 @@
  		return ($this->create())? true : false;
  	}
 
-  /*public function displayproduct(){
-        $sql = "SELECT * FROM ".static::$table_name." WHERE $product_id = 'product_id' ";
-      $product = static::findBySql($sql);
-      return ($product) ? array_shift($product) : false;
-  }*/
-
-    protected $upload_errors = array (
+  protected $upload_errors = array (
       UPLOAD_ERR_OK         => "No errors.",
       UPLOAD_ERR_INI_SIZE   => "Larger than upload_max_filesize.",
       UPLOAD_ERR_FORM_SIZE  => "Larger than form MAX_FILE_SIZE.",
@@ -91,16 +85,7 @@
         $this->type = $file['type'];
         $this->size = $file['size'];
         return true;
-
-
-
-/*$path_parts = pathinfo('/www/htdocs/inc/lib.inc.php');
-
-echo $path_parts['dirname'], "\n";
-echo $path_parts['basename'], "\n";
-echo $path_parts['extension'], "\n";
-echo $path_parts['filename'], "\n"*/
-     }
+      }
     }
 
     public function save_with_file(){
@@ -137,7 +122,7 @@ echo $path_parts['filename'], "\n"*/
                   <li data-target='#carousel-example-generic' data-slide-to='1'><i class='fa fa-angle-right'></i>
                   </li>
                 </ol>
-                <div class='carousel-inner' role='listbox'>
+                <div class='carousel-inner result' role='listbox'>
                   <div class='item active'>
                     <div class='row'>";
                       if($all = static::All() )
@@ -191,7 +176,7 @@ public static function display(){
             <li data-target='#best-selling' data-slide-to='0' class='active'><i class='fa fa-angle-left'></i></li>
             <li data-target='#best-selling' data-slide-to='1'><i class='fa fa-angle-right'></i></li>
           </ol>
-          <div class='carousel-inner' role='listbox'>
+          <div class='carousel-inner result' role='listbox'>
             <div class='item active'>
               <div class='row'>
                 <div class='col-sm-6'>
@@ -244,7 +229,7 @@ public static function display(){
                   <li data-target='#carousel-example-generic' data-slide-to='1'><i class='fa fa-angle-right'></i>
                   </li>
                 </ol>
-                <div class='carousel-inner' role='listbox'>
+                <div class='carousel-inner result' role='listbox '>
                   <div class='item active'>
                     <div class='row'>";
                       if($all = static::All() )
@@ -304,7 +289,7 @@ foreach ($all as $index=>$product){
     $panel.="</div>
   <div class ='row'>";
 
-  $panel.= "<div class='col-lg-2  col-md-2'>
+  $panel.= "<div class='col-lg-2  col-md-2 result'>
               <div class='panel panel-default '> 
                 <div>
                  <img src='images/product/$product->logo' style='max-width: 80px; max-height: 80px;'/>
@@ -332,3 +317,27 @@ echo $panel;
    }       
 }
 ?>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+    $('.search-box input[type="text"]').on("keyup input", function(){
+        /* Get input value on change */
+        var inputVal = $(this).val();
+        var resultDropdown = $(this).siblings(".result");
+        if(inputVal.length){
+            $.get("backend-search.php", {term: inputVal}).done(function(data){
+                // Display the returned data in browser
+                resultDropdown.html(data);
+            });
+        } else{
+            resultDropdown.empty();
+        }
+    });
+    
+    // Set search input value on click of result item
+    $(document).on("click", ".result p", function(){
+        $(this).parents(".search-box").find('input[type="text"]').val($(this).text());
+        $(this).parent(".result").empty();
+    });
+});
+</script>

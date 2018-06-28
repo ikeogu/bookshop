@@ -5,12 +5,12 @@ $foot = "";
 			<div class='footer-top'>
 				<div class='container'>			
 					<div class='row'>	
-						<div class='col-sm-6 col-md-6 col-lg-6' >
+						<div class='col-xs-6 col-sm-6 col-md-6 col-lg-6' >
 							<h2>About Heldy_products</h2>
 							<div class='heading-border b-color-1'></div>
 							<p>Nam apeirian assentior ei, utquo eros posse verterem. Cum eu error congue saperet. Te eam exerci vulputate consetetur, 								causae consulatu eaper,  apeirian assentior ei, utquo eros posse verterem. Cum eu error congue saperet. Te eam exerci 								vulputate consetetur, causae consulatu eaper</p>
 						</div>					
-						<div class='col-sm-5 col-md-6 col-lg-6'>
+						<div class='col-sm-5 col-md-6 col-lg-6 col-xs-6'>
 							<h2>Contact us</h2>
 							<div class='heading-border b-color-1'></div>
 							<strong class='media-heading'>Address</strong>
@@ -30,7 +30,7 @@ $foot = "";
 			<div class='footer-bottom'>
 				<div class='container'>		
 					<div class='row'>	
-						<div class='col-sm-12 col-md-12 text-center'>
+						<div class='col-sm-12 col-md-12 text-center col-xs-12'>
 							<p>Copyright 2018 made by Heldy_products & Disign by Dera Tech. All Rights Reserved.</p>
 							
 						</div>

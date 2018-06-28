@@ -84,22 +84,22 @@
                             </div>
                             <div class="content">
                                 <form action="adminsignup.php" method="POST" enctype="multipart/form-data">
-                                    <div>
+                                    <div class="col-md-4 col-sm-6 col-lg-6" >
                                         <?php echo $result;?>
                                     </div>
                                     <div class="row">
-                                       <div class="col-md-5">
+                                       <div class="col-md-5 ">
                                             <div class="form-group">
                                                 <label>passport</label>
                                                 <input type="file" class="form-control"   name="passport"  required="">
                                             </div> 
-                                       <div class="col-md-3">
+                                       <div class="col-md-3 ">
                                             <div class="form-group">
                                                 <label>Username</label>
                                                 <input type="text" class="form-control" placeholder="Username"  name="username">
                                             </div>
                                         </div>
-                                        <div class="col-md-4">
+                                        <div class="col-md-4 ">
                                             <div class="form-group">
                                                 <label for="exampleInputEmail1">Email address</label>
                                                 <input type="email" class="form-control" placeholder="Email" name="email">

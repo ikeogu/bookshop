@@ -10,5 +10,4 @@
   <div  id='footerSection' class='thumbnail'>
   	<?php include('footer.php');?>
   </div>
-  </div>
-  </body>
+  

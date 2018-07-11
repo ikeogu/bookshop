@@ -47,7 +47,7 @@ $(document).ready(function(){
 		<header class="header">
 			
 			<!-- header top -->
-			<div class="header-top">
+			<!--<div class="header-top">
 				<div class="container">
 					<div class="row">
 						
@@ -66,7 +66,7 @@ $(document).ready(function(){
 						</div>	
 					</div>	
 				</div>
-			</div>
+			</div>-->
 			
 			<!-- logo and adds -->
 			<div class="logo-add">
@@ -74,10 +74,6 @@ $(document).ready(function(){
 					<div class="row">
 						<div class="col-sm-6 col-md-6">
 							<div class="logo"><i class="fa fa-diamond"></i>Heldy-products</div>
-						</div>
-						<div class="col-sm-6 col-md-6">
-							<h3 class="add bb-year-end-ribbon hidden-xs"><img src="images/re.jpg" width="40px;" alt="" /> 
-							<span> We Can <span>Help</span> Your Research Work</span> <button class="btn btn-default"></button></h3>
 						</div>
 					</div>
 				</div>

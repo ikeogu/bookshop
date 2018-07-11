@@ -66,7 +66,7 @@
      
 
 
-    $display =" <section class='featured-product'>
+    $display =" <section class='books'>
                  <div class='container'>
                 <div class='row'>
                   <div class='col-sm-12'>

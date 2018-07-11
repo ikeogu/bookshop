@@ -5,7 +5,7 @@ require("header.php");
 
 </section>
 
-		<section class="home">
+		<!--<section class="home">
 			<div class="intro">
 				<div id="home" class="carousel slide" data-ride="carousel">
 					<ol class="carousel-indicators">
@@ -86,33 +86,28 @@ require("header.php");
 							
 						</div>	
 					</div>
-					<!-- Controls -->
+					
 					<a class="left carousel-control" href="#home" role="button" data-slide="prev"><i class="fa fa-angle-left"></i></a>
 					<a class="right carousel-control" href="#home" role="button" data-slide="next"><i class="fa fa-angle-right"></i></a>
 				</div>
 			</div>
-		</section>	
-		
-		
-		<!-- service -->
-		<?php
-				include_once 'includes/category.php';
-				$categories = Categories::category();
-				echo $categories;
-		?>
+		</section>	 -->
+		<div>
+			<?php
+					include_once 'includes/category.php';
+					$categories = Categories::category();
+					echo $categories;
+			?>
+		</div>
 		<!-- featured product -->
 			<!-- section title -->
+			<div>
 				<?php
 				include_once 'includes/product.php';
 				$product = Product::product();
 				echo $product;
 				?>
-
-		
-					
-								
-							
-		</section>		
+			</div>	
 		
 		<!-- emarket adds -->
 		<section class="emarket-adds">

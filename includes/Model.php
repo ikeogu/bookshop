@@ -1,5 +1,5 @@
 <?php
-	include_once 'MyPDO.php';
+	include_once 'MYPDO.php';
 	class Model extends MyPDO {
 		
 		protected static $class_name;

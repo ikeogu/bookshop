@@ -1,5 +1,5 @@
 <?php
- include_once 'model.php';
+ include_once 'Model.php';
 
     class Admin extends Model{
     	public $admin_id;

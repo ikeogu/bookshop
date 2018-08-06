@@ -125,9 +125,9 @@ include ("header.php");
                                     <div class="row">
                                         <div class="col-lg-5 col-sm-6 col-md-6">
                                            
-                                            <button type="submit" class="btn btn-success btn-fill col-sm-4 col-md-4" name="create" >Sign up</button>
+                                            <button type="submit" class="btn btn-default btn-fill col-sm-4 col-md-4" name="create"  role='button'>Sign up</button>
                                         
-                                                <a type="button" class="btn btn-success btn-fill  col-md-4 col-sm-4" href="login.php" >Login</a>
+                                                <a type="button" class="btn btn-default btn-fill  col-md-4 col-sm-4" href="login.php"  role='button' >Login</a>
                                         </div>
                                     </div> 
                                 </form>     

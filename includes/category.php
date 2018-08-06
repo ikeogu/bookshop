@@ -71,7 +71,7 @@
                 <div class='row'>
                   <div class='col-sm-12'>
                     <div class='>
-                      <h1><span class='t-color-1'>Featured</span> Products
+                      <h1><span class='t-color-1'>Category</span>Books
                         <small class='btn-group hidden-xs'>
                           <a class=' btn btn-default btn-sm dropdown-toggle' data-toggle='dropdown' aria-haspopup='true' 
                              aria-expanded='false'>All Categories <i class='fa fa-bars'></i></a>

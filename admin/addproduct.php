@@ -7,14 +7,15 @@
        
         
       $product = Product::instantiate($_POST);
+    
       $product->price *=100;
       $header = ' Upload Status ';
       $message ='Your product  was successfully uploaded.';
       $message2= 'Oops! seems somthing was missing .';
       $message3= 'file upload was successful.';
       if($product){ 
+          
         $product->attach_file($_FILES['logo']) and $product->attach_file($_FILES['file']);
-
             if ($product->save_with_file()) {
                  $result = '<div class="alert alert-success alert-dismissible" role="alert">
                   <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
@@ -34,10 +35,10 @@
                     <div class="col-md-8">
                         <div class="card">
                             <div class="header">
-                                <h4 class="title">Add a new product</h4>
+                                <h4 class="title">Add a new Book</h4>
                             </div>
                             <div class="content">
-                                <form action="addproduct.php" method="POST" enctype="multipart/form-data">
+                                <form action="addproduct.php" method="post" enctype="multipart/form-data">
                                     <div>
                                         <?php echo $result;?>
                                     </div>

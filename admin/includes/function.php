@@ -11,7 +11,7 @@
 
   }*/
    function redirect ($location = ''){
-   	header("location: $location");
+   	//header("location: $location");
    } 
 
 

@@ -1,5 +1,5 @@
 <?php
-  require 'paymentgateway/vendor/yabacon/paystack-php/src/autoload.php';
+  require 'vendor/yabacon/paystack-php/src/autoload.php';
   include_once 'includes/customer.php';
   include_once 'includes/session.php';
   include ('includes/orderdetails.php');

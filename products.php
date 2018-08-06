@@ -7,7 +7,7 @@ include_once 'header.php';?>
   <title>products</title>
 </head>
 <body>
-    <h3><font color="green">List of Products</font> </h3> 
+    <h3><font color="#bb3239">Library</font> </h3> 
       <section>
         <?php 
     
@@ -16,7 +16,7 @@ include_once 'header.php';?>
         echo $show;
         ?>
       </section>
-      <section>
+      <section style="padding-top: 1000px;">
         <?php  include_once 'footer.php';?>
        </section>
 </body>

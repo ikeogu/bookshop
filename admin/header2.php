@@ -7,15 +7,8 @@
 
 	<title> Dashboard </title>
 
-	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
-    <meta name="viewport" content="width=device-width" />
-
-
-    <!-- Bootstrap core CSS     -->
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
-
-    <!-- Animation library for notifications   -->
-    <link href="assets/css/animate.min.css" rel="stylesheet"/>
+	<meta name="viewport" content="width=device-width" />
+     <link href="assets/css/animate.min.css" rel="stylesheet"/>
 
     <!--  Light Bootstrap Table core CSS    -->
     <link href="assets/css/light-bootstrap-dashboard.css?v=1.4.0" rel="stylesheet"/>
@@ -25,12 +18,51 @@
     <link href="assets/css/demo.css" rel="stylesheet" />
 
 
+        <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/font-awesome.min.css" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet">
+        <link href="css/style2.css" rel="stylesheet">
+    <script src="js/jquery-2.1.1.min.js" type="text/javascript"></script>
+    <script src="js/jquery-ui.js" type="text/javascript"></script> 
+    <link href="css/jquery-ui.css" rel="stylesheet" media="screen" />
+    <link href="css/oclayerednavigation.css" rel="stylesheet">         
+    <script src="js/oclayerednavigation.js" type="text/javascript"></script>
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen" />
+    <script src="js/bootstrap.min.js" type="text/javascript"></script>
+    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="css/simple-line-icons.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,300,700" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Josefin+Sans" />
+    <link href='https://fonts.googleapis.com/css?family=Josefin+Sans:400,600,700' rel='stylesheet' type='text/css' />
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700" rel="stylesheet"> 
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,700,900' rel='stylesheet' type='text/css' />
+    <link href='https://fonts.googleapis.com/css?family=Raleway:400,600,700,800,900,500' rel='stylesheet' type='text/css' />
+    <link href="css/stylesheet2.css" rel="stylesheet">
+    <link href="css/custommenu.css" rel="stylesheet">
+    <script src="js/customenu.js" type="text/javascript"></script>
+    <script src="js/custommenu.js" type="text/javascript"></script>
+    <script src="js/mobile_menu.js" type="text/javascript"></script>
+    <link href="css/owl.carousel.css" rel="stylesheet">
+    <script src="js/owl.carousel.js" type="text/javascript"></script>
+    <script src="js/jquery.elevatezoom.js" type="text/javascript"></script>
+    <script src="js/jquery.nivo.slider.js" type="text/javascript"></script>
+    <link href="css/animate.css" rel="stylesheet" type="text/css">
+    <link href="css/ocslideshow.css" rel="stylesheet">
+    <script src="js/main.js" type="text/javascript"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+    <link href="css/featuredslider.css" type="text/css" rel="stylesheet" media="screen" />
+    <link href="css/owl.theme.css" type="text/css" rel="stylesheet" media="screen" />
+    <link href="css/ocsvegamenu.css" type="text/css" rel="stylesheet" media="screen" />
+    <link href="css/ocslideshow.css" type="text/css" rel="stylesheet" media="screen" />
+    <script src="js/common9.js" type="text/javascript"></script>
+    <link href="https://booksellers.ng/image/catalog/favicon1.png" rel="icon" />
+    <script src="js/jquery.bpopup.min.js" type="text/javascript"></script>
+        
     <!--     Fonts and icons     -->
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
     <link href="assets/css/pe-icon-7-stroke.css" rel="stylesheet" />
-
-
 </head>
 <body>
 
@@ -91,9 +123,15 @@
                     </a>
                 </li>
                 <li>
-                    <a href="order.php">
+                    <a href="makeblog.php">
                         <i class="pe-7s-graph"></i>
-                        <p>tRANSACTIONS</p>
+                        <p>make a blog</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="../blog.php">
+                        <i class="pe-7s-graph"></i>
+                        <p>see blog</p>
                     </a>
                 </li>
                 <li>

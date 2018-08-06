@@ -31,7 +31,7 @@ include_once 'includes/function.php';
                   <div class="col-md-8">
                       <div class="card">
                           <div class="header">
-                              <h4 class="title">Add a Category</h4>
+                              <h4 class="title">Add a Book Category</h4>
                           </div>
                           <div class="content">
                               <form action="addcategories.php" method="POST">

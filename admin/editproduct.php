@@ -2,38 +2,32 @@
     include_once '../includes/product.php';
     include_once '../includes/session.php';
     include_once '../includes/function.php';
+    include("header2.php");
     $result = '';
   
-   if(isset($_GET) & !empty($_GET)){
-  $product_id = $_GET['product_id'];
-  $product = Product::find($product_id);
-}else{
-  header('location: product.php');
+      $product_id = $_GET['id'];
+      $product = Product::find($product_id);
 
-      
-            if(isset($_POST['update'])){
+    
+        if(isset($_POST['update'])){
             $product = Product::instantiate($_POST);
-            $product->product_id = $product_id;
             $header = 'update Status';
             $message ='product updated successsfully.';
             $message2= 'product was not updated.';
 
           if($product)
           if ($product->update()) {
-               echo  $result = '<div class="alert alert-success alert-dismissible" role="alert">
+              $result = '<div class="alert alert-success alert-dismissible" role="alert">
 <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
 '."$header".'<br/>'.'<hr/>'."$message".'</div>';
            }else {
-                echo $result = '<div class="alert alert-danger alert-dismissible" role="alert">
+                $result = '<div class="alert alert-danger alert-dismissible" role="alert">
 <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
 '."$header".'<br/>'.'<hr/>'."$message2".'</div>';
               }
           }   
 
-    }
-?>
-<?php
-include("header2.php");
+    
 ?>
 <section> 
   <div class="content">
@@ -45,7 +39,7 @@ include("header2.php");
                                 <h4 class="title">Edit product</h4>
                             </div>
                             <div class="content">
-                                <form action="editproduct.php?id=<?php echo $product->getProductId()?>"  method="POST" enctype="multipart/form-data">
+                                <form action="editproduct.php?id=<?php echo $product->getProductId()?>"  method="post" enctype="multipart/form-data">
                                     <div>
                                         <?php echo $result;?>
                                     </div>

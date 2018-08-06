@@ -122,47 +122,40 @@
                   <li data-target='#carousel-example-generic' data-slide-to='1'><i class='fa fa-angle-right'></i>
                   </li>
                 </ol>
-                <div class='carousel-inner result' role='listbox'>
+                <div class='carousel-inner' role='listbox'>
                   <div class='item active'>
                     <div class='row'>";
                       if($all = static::All() )
                       foreach ($all as $index => $product ){
-                        $product->price/= 100;
+                          $product->price/=100;
                          if ($index != 0 && $index % 4==0)
           $display.="<div>
-                      <div class='col-sm-3  col-lg-4'>
+                      <div class='col-sm-3  col-lg-2'>
                       <div class='thumbnail'>
-                        <span class='service-link text-center'>
-                          <img class='img-responsive' src='images/product/<?php echo $product->logo?>' width='100' height='80' class='img-responsive'  alt=''>
-                        </span>
-                        <div class='caption'>
-                          <div class='category'>$product->category
+                        <div class='category'> $product->category
                             <div class='pull-right'>
                               <i class='fa fa-star'></i>
                               <i class='fa fa-star'></i>
                               <i class='fa fa-star'></i>
                             </div>
+                        <div class='caption'>
+                          
+                           <span class='service-link text-center'>
+                          <img class='img-responsive' src='images/product/$product->logo' width='100' height='80' class='img-responsive'  alt=''>
+                        </span> 
                           </div>
-                          <h4>Name:{$product->title}</h4>
-                          <h5> Price: N$product->price</h5>
+                          <h4>Name:$product->title</h4>
+                          <h5> Price: ₦$product->price</h5>
                           <h5>Description:  $product->descr</h6>
                           <h6>size  $product->size MB</h6>
-                          <div><a href= 'login.php' class='btn btn-default' role='button'>Add to Cart</a><span class='pull-right'><i class='fa fa-heart-o'
-                            ></i> Add to Wishlist</span>
+                          <div><a href= 'login.php' class='btn btn-default' role='button'>Add to Cart</a><span class='pull-right'>
                           </div>
                         </div>
                       </div>
                     </div>";}             
       $display.="</div>
                 </div>
-              </div>
-    <script src='js/jquery.js'></script>
-    <script src='bootstrap/js/bootstrap.min.js'></script>
-    <script src='js/custom.js'></script>
-</body>
-<script type=text/javascript' src='js/bootstrap.min.jscol-lg-4 '></script>
-</body>
-</html>";
+              </div>" ;
               echo $display;
             
           } 
@@ -185,7 +178,7 @@ public static function display(){
                     if($all =static::All())
              foreach ($all as $product){
               $product->price/= 100;
-                if($product->category == "Text Book"){    
+                    
 
                   $pro.="<div class='media-left'><img class='img-responsive' src='./images/product/<?php echo $product->logo?' alt=''></div>
                     <div class='media-body'>
@@ -201,13 +194,13 @@ public static function display(){
                         </div>
                       </div>
                       <h3>$product->descr</h3>
-                      <strong>N.$product->price</strong>
+                      <strong>₦$product->price</strong>
 
                    <div>
                         <a href='#' class='btn btn-default' role='button'>Add to Cart</a><span class='pull-right'><i class='fa fa-heart-o'></i> Add to Wishlist</span></div>
                     </div>
                     </div>
-                </di>";}
+                </di>";
                     
                   } 
 
@@ -223,12 +216,6 @@ public static function display(){
 
    public static function show(){
       $show= "<div id='carousel-example-generic' class='carousel slide' data-ride='carousel'>
-                <ol class='carousel-indicators'>
-                  <li data-target='#carousel-example-generic' data-slide-to='0' class='activ'><i class='fa fa-angle-left'></i>
-                  </li>
-                  <li data-target='#carousel-example-generic' data-slide-to='1'><i class='fa fa-angle-right'></i>
-                  </li>
-                </ol>
                 <div class='carousel-inner result' role='listbox '>
                   <div class='item active'>
                     <div class='row'>";
@@ -236,108 +223,79 @@ public static function display(){
                       foreach ($all as $index => $product ){
                         $product->price/= 100;
                         if ($index != 0 && $index % 1==0)
-          $show.="<div>
+            $show.="<div>
                       <div class='col-sm-3  col-lg-3'>
-                      <div class='thumbnail'>
-                        <span class='service-link text-center'>
-                          <img class='img-responsive' src='images/product/$product->logo' width='100' height='80' class='img-responsive'  alt=''>
-                        </span>
-                        <div class='caption'>
+                        <div class='thumbnail'>
                           <div class='category'>$product->category
-                            <div class='pull-right'>
-                              <i class='fa fa-star'></i>
-                              <i class='fa fa-star'></i>
-                              <i class='fa fa-star'></i>
-                            </div>
+                              <div class='pull-right'>
+                                <i class='fa fa-star'></i>
+                                <i class='fa fa-star'></i>
+                                <i class='fa fa-star'></i>
+                              </div>
+                              <div class='caption'>
+                            
+                              <span class='service-link text-center'>
+                              <img class='img-responsive' src='images/product/$product->logo' width='100' height='80' class='img-responsive'  alt=''>
+                              </span>
                           </div>
-                          <h4>Name:{$product->title}</h4>
-                          <h5> Price: N$product->price</h5>
+                          <h4>Name:$product->title</h4>
+                          <h5> Price: ₦$product->price</h5>
                           <h5>Description:  $product->descr</h6>
-                          <h6>size  $product->size MB</h6>
-                          <div><a href= 'login.php' class='btn btn-success' role='button'>Add to Cart</a>
+                          
+                          <div><a href= 'login.php' class='btn btn-default' role='button'>Add to Cart</a><span class='pull-right'>
                           </div>
                         </div>
                       </div>
                     </div>";}             
-      $show.="</div>
-                </div>
-              </div>
-    <script src='js/jquery.js'></script>
-    <script src='bootstrap/js/bootstrap.min.js'></script>
-    <script src='js/custom.js'></script>
-</body>
-<script type=text/javascript' src='js/bootstrap.min.jscol-lg-4 '></script>
-</body>
-</html>";
+        $show.="</div>
+            </div>
+          </div>
+        </div>  
+    ";
               echo $show;
             
 
    } 
 
-   public  static function panel(){
-
+  public  static function panel(){
     $panel = '';
 
- $panel = "<div id='mainBody' class='container'>
-            <font color='green'><h3> Products </h3>
-            <div class ='row'>"; 
-      
-if($all =static::All())
-foreach ($all as $index=>$product){
-  $product->price/= 100;
-  if ($index != 0 && $index % 4==0)
-    $panel.="</div>
-  <div class ='row'>";
+     $panel = "<div id='mainBody' class='container'>
+                <font color='red'>
+                  <h3> Books </h3>
+                <div class ='row'>"; 
+          
+    if($all =static::All())
+    foreach ($all as $index=>$product){
+      $product->price/= 100;
+      if ($index != 0 && $index % 4==0)
+        $panel.="</div>
+      <div class ='row'>";
 
-  $panel.= "<div class='col-lg-2  col-md-2 result'>
-              <div class='panel panel-default '> 
-                <div>
-                 <img src='images/product/$product->logo' style='max-width: 80px; max-height: 80px;'/>
-                 </div>
-                <div class='panel-body'>
-                 <strong> $product->category</strong>
-                  <strong> $product->title</strong>
-                  <h4> $product->publisher</h4>
-                  <h4> N$product->price </h4>
-                  <h4>size:$product->size</h4>
-                </div>
-                <div class='panel-footer'>
-                  <h4><a class='btn btn-success' title='Click to view!' href='user_product_details.php?id=$product->product_id'><i class='fa icon-check'></i> VIEW </a>
+      $panel.= "<div class='col-lg-2  col-md-2'>
+                  <div class='panel panel-default '> 
+                    <div>
+                     <img src='images/product/$product->logo' style='max-width: 80px; max-height: 80px;'/>
+                     </div>
+                    <div class='panel-body'>
+                      <strong> $product->title</strong>
+                      <h4> $product->publisher</h4>
+                      <h4> N$product->price </h4>
+                      
+                    </div>
+                    <div class='panel-footer'>
+                      <h4><a class='btn btn-default' rolo='button ' title='Click to view!' href='user_product_details.php?id=$product->product_id'><i class='fa icon-check'></i> VIEW </a>
 
-                
-                </div>  
-              </div>
-            </div>";}
+                    
+                    </div>  
+                  </div>
+                </div>";}
 
-$panel.=" </div>    
-          </font>   
-          </div>";
+    $panel.=" </div>    
+              </font>   
+              </div>";
 
-echo $panel;
-   }       
+    echo $panel;
+       }       
 }
 ?>
-<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-<script type="text/javascript">
-$(document).ready(function(){
-    $('.search-box input[type="text"]').on("keyup input", function(){
-        /* Get input value on change */
-        var inputVal = $(this).val();
-        var resultDropdown = $(this).siblings(".result");
-        if(inputVal.length){
-            $.get("backend-search.php", {term: inputVal}).done(function(data){
-                // Display the returned data in browser
-                resultDropdown.html(data);
-            });
-        } else{
-            resultDropdown.empty();
-        }
-    });
-    
-    // Set search input value on click of result item
-    $(document).on("click", ".result p", function(){
-        $(this).parents(".search-box").find('input[type="text"]').val($(this).text());
-        $(this).parent(".result").empty();
-    });
-});
-</script>

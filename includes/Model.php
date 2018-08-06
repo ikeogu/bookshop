@@ -65,7 +65,7 @@
 			$sql = "INSERT INTO ".static::$table_name;
 			$sql .= " (".join(',',$obj_attributes_array_keys).") ";
 			$sql .= "VALUES ('".join("','",$obj_attributes_array)."')";	
-			//echo "$sql";
+			
 			return $this->connection->query($sql);
 		}
 
@@ -92,9 +92,10 @@
 			return static::findBySql($sql);
 		}
 		public function delete(){
-			$sql = "DELETE FROM ".static::$table_name;
-			$sql.= " WHERE $primary_key = {$this->$primary_key}";
-			return $this->connection->query($sql);
-		}
+            $primary_key = static::$primary_key;
+            $sql = "DELETE FROM ".static::$table_name;
+            $sql.= " WHERE $primary_key = '{$this->$primary_key}'";
+            return $this->connection->query($sql);
+        }
 	}
 ?>

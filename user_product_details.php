@@ -18,30 +18,30 @@
       <img src="images/product/<?php echo $product->logo; ?>" width="100%" />    
     </div>
     <div class="col-lg-4 col-md-4 col-sm-4">
-      <h3 style="color: green;"><?php echo $product->title; ?></h3>
+      <h3><?php echo $product->title; ?></h3>
       <h4> <?php echo $product->publisher;?></h4>
       <h4> <?php echo $product->category;?></h4>
-      <div style="color: green;">
-              <?php echo $product->descr;?>
+      <div>
+              <p><?php echo $product->descr;?></p>
       </div>
       <hr class="soft"/>
     </div>
     <div class="col-lg-4 col-sm-4 col-md-4">
       <form class="form-horizontal qtyFrm" method="post" action="product_summary.php">
           <input type="hidden" id="username" name="product_id" value="<?php echo($product->getProductid());?>" 
-          class="input-xlarge" required style="color: green;"/>
+          />
           <div class="control-group">
             <label>
-              <h3 style="color: green;"><span>Price: N<?php echo $product->price;?></span></h3>
+              <h3><span>Price: N<?php echo $product->price;?></span></h3>
             </label>
           </div>  
           <br/>
-          <h4 style="color: green;"><?php echo $product->quantity;?> Items stock</h4> 
+           
           <div class="control-group">
             <label><h4> Qty:</h4></label>
-            <input name='quantity' type='number' min="1" max="<?php echo $product->quantity;?>" style="color:green;">
+            <input name='quantity' type='number' max="1"  color="green" class="form-group form-control" ">
             <div>
-               <button type="submit" name="submit" class="btn btn-md btn-success btn-fill">
+               <button type="submit" name="submit" class="btn btn-md btn-default btn-fill" role='button'>
                 <i class="icon-shopping-cart"></i> Add to cart
               </button>
             </div>

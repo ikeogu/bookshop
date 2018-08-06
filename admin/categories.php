@@ -1,7 +1,7 @@
 <?php
 include ("header2.php");
 include_once '../includes/category.php';
-include_once '../includes/function.php';
+include_once 'includes/function.php';
 	$cat = new Categories();
 	if(isset($_GET['cat_id']) && isset($_GET['opt'])){
 

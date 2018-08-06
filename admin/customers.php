@@ -15,7 +15,7 @@
 
  <body class="container" >
  	
- 	<article class="col col-lg-9 col-md-8  col-xs-9">
+ 	<article class="col col-md-4  col-xs-4">
  		<div class="row">
  		
  		</div>
